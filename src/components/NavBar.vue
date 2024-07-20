@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
+import IconSearch from '@/components/icons/IconSearch.vue';
+import IconCart from '@/components/icons/IconCart.vue';
+import IconButton from '@/components/icons/IconButton.vue';
+import nissaLogo from '@/assets/images/nisaa-logo.svg';
 
 const isMenuOpen = ref(false);
 
@@ -13,7 +17,7 @@ const menuOpen = ref("menu-open");
     <nav class="nav">
         <div class="nav-content">
             <a href="/" @clic="isMenuOpen = false">
-                <img src="" alt="nisaa logo">
+                <img :src="nissaLogo" alt="nisaa logo" class="nav-brand">
             </a>
             <ul :class="[isMenuOpen ? 'menu-open' : 'nav-menu']">
                 <li class="menu-link">
@@ -29,16 +33,15 @@ const menuOpen = ref("menu-open");
                     <RouterLink to="/" @clic="isMenuOpen = false">contact</RouterLink>
                 </li>
             </ul>
-            <div class="menu-utils">
-                <div>recherche</div>
-                <div>panier</div>
+            <div class="utils-wrapper">
+                <div class="menu-utils">
+                    <IconSearch />
+                    <IconCart />
+                </div>
+                <span class="btn-toggle-menu" @click="isMenuOpen = !isMenuOpen">
+                    <IconButton />
+                </span>
             </div>
-            <span class="btn-toggle-menu" @click="isMenuOpen = !isMenuOpen">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                    fill="#e8eaed">
-                    <path d="M160-360v-80h640v80H160Zm0-160v-80h640v80H160Z" />
-                </svg>
-            </span>
         </div>
     </nav>
 </template>
@@ -68,8 +71,16 @@ const menuOpen = ref("menu-open");
     position: relative;
 }
 
+.nav-brand {
+    width: 60px;
+    fill: var(--clr-green);
+    color: var(--clr-green);
+}
+
 .nav-menu {
     display: none;
+    visibility: hidden;
+    transition: .5s;
 
 }
 
@@ -80,6 +91,12 @@ const menuOpen = ref("menu-open");
 
 .menu-link a {
     color: var(--clr-green);
+}
+
+.utils-wrapper {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
 }
 
 .menu-utils {
@@ -99,5 +116,7 @@ const menuOpen = ref("menu-open");
     padding: 25px;
     background-color: var(--clr-maroon);
     row-gap: 15px;
+    visibility: visible;
+
 }
 </style>
