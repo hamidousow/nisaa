@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Abril Fatface';
+  src: url('../fonts/AbrilFatface-Regular.ttf');
+  src: url('../fonts/AbrilFatface-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Futura Book';
+  src: url('../fonts/Futura-Book.ttf');
+  src: url('../fonts/Futura-Book.ttf') format('ttf');
+}
+
+.abril-fatface-font {
+  font-family: 'Abril Fatface';
+  line-height: 100%;
+  margin-bottom: 5px;
+}
+
+.futura-regular-font {
+  font-family: 'Futura Book';
+  line-height: 125%;
+}

@@ -58,6 +58,7 @@ const menuOpen = ref("menu-open");
     right: 0;
     top: 0;
     background-color: var(--clr-maroon);
+    z-index: 99;
 }
 
 .nav-content {
