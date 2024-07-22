@@ -3,3 +3,18 @@
   --clr-green: #2d382f;
   --clr-white: #ffffff;
 }
+
+
+.clr-white {
+  color: var(--clr-white);
+}
+.clr-maroon {
+  color: var(--clr-maroon);
+}
+
+.bg-clr-white {
+  background-color: var(--clr-white);
+}
+.bg-clr-maroon {
+  background-color: var(--clr-maroon);
+}

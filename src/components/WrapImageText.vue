@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import ImageComponent from '@/components/ImageComponent.vue';
 
-const props = defineProps(["imgSrc", "imgAlt", "title", "text"])
+const props = defineProps(["imgSrc", "imgAlt", "title", "text", "textColor", "textBackgroundColor"])
 </script>
 
 <template>
-    <div class="wrap-iamge-text">
+    <div class="wrap-image-text">
         <ImageComponent :src="props.imgSrc" :alt="props.imgAlt" class="border-white" />
-        <div class="wrap-title-text">
-            <h2 class="title-h2 abril-fatface-font ">{{ props.title }}</h2>
-            <p class="text futura-regular-font">{{ props.text }}</p>
+        <div class="wrap-title-text" :class="[props.textBackgroundColor]">
+            <h2 class="title-h2 abril-fatface-font" :class="[props.textColor]">{{ props.title }}
+            </h2>
+            <p class="text futura-regular-font" :class="[props.textColor]">{{ props.text }}</p>
         </div>
     </div>
 </template>
@@ -20,11 +21,28 @@ const props = defineProps(["imgSrc", "imgAlt", "title", "text"])
     border-radius: 3px;
 }
 
+.container-image {
+    width: 80%;
+    /* margin: auto; */
+}
+
+.wrap-image-text {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
 .wrap-title-text {
-    margin: 15px 0;
+    /* margin: 15px 0; */
     display: flex;
     flex-direction: column;
     row-gap: 8px;
+    padding: 40px 10px 10px;
+    position: relative;
+    top: -20px;
+    justify-content: flex-end;
+    z-index: -2;
+    width: 80%;
+    margin-left: auto;
 }
 
 .title-h2 {
