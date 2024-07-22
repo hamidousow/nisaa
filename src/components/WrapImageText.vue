@@ -43,6 +43,7 @@ const props = defineProps(["imgSrc", "imgAlt", "title", "text", "textColor", "te
     z-index: -2;
     width: 80%;
     margin-left: auto;
+    border-radius: 3px;
 }
 
 .title-h2 {
