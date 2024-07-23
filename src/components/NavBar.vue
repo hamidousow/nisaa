@@ -85,7 +85,7 @@ const menuActive = ref("nav-menu active");
     height: 90vh;
     flex-direction: column;
     position: absolute;
-    align-items: center;
+    align-items: flex-end;
     top: 65px;
     right: 0;
     left: 0;
@@ -96,7 +96,7 @@ const menuActive = ref("nav-menu active");
 
 .nav-menu.active {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .menu-link {
