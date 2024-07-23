@@ -52,6 +52,6 @@ const props = defineProps(["imgSrc", "imgAlt", "title", "text", "textColor", "te
 }
 
 .text {
-    font-size: 16px;
+    font-size: clamp(16px, 2vw, 19px);
 }
 </style>
