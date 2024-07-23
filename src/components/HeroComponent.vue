@@ -41,21 +41,21 @@ import Button from "@/components/ButtonCta.vue";
 .header-left {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 10px;
 }
 
 .header-title {
-    font-size: clamp(40px, 2vw, 50px);
+    font-size: clamp(27px, 2vw, 50px);
 }
 
 .header-text {
-    font-size: clamp(21px, 2vw, 30px);
+    font-size: clamp(16px, 2vw, 30px);
 }
 
 .header-container-image {
     width: 100%;
     height: 100%;
-    max-height: 250px;
+    /* max-height: 250px; */
     position: relative;
 }
 
