@@ -54,4 +54,36 @@ const props = defineProps(["imgSrc", "imgAlt", "title", "text", "textColor", "te
 .text {
     font-size: clamp(16px, 2vw, 19px);
 }
+
+@media screen and (min-width: 768px) {
+
+    .wrap-image-text {
+        display: flex !important;
+        flex-direction: row !important;
+        margin-bottom: 75px;
+    }
+
+    .wrap-title-text {
+        justify-content: center !important;
+        padding: 30px !important;
+        position: relative;
+        top: 0 !important;
+        justify-content: center;
+    }
+
+    .wrap-image-text:nth-child(2) {
+        display: flex !important;
+        flex-direction: row-reverse !important;
+        margin-bottom: 75px;
+    }
+
+    .wrap-image-text:nth-child(2) .wrap-title-text {
+        padding-right: 90px !important;
+        position: relative;
+        top: 0 !important;
+        justify-content: center;
+        left: 80px;
+        top: 80px !important;
+    }
+}
 </style>
