@@ -49,7 +49,7 @@ import CommentComponent from "@/components/CommentComponent.vue";
       </div>
       <ButtonCta :path="'/'" class="mt">Je m'abonne !</ButtonCta>
     </section>
-    <section class="section-quick-shop mb-130">
+    <section class="section-quick-shop mb-60">
       <CardLink :title="'la box du mois'" :text="'34.95€'">
         <img :src="nisaaBox" alt="box nisaa box">
       </CardLink>
