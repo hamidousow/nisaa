@@ -4,12 +4,13 @@ import HeroComponent from "@/components/HeroComponent.vue";
 import womanOne from "@/assets/images/woman-1.jpg";
 import masjid from "@/assets/images/masjid.jpg";
 import WrapImageText from '@/components/WrapImageText.vue';
-import woman3 from "@/assets/images/woman-3.jpg";
+import nisaaBox from "@/assets/images/nisaa-box.jpg";
 import woman4 from "@/assets/images/woman-makeup.png";
 import ServiceCard from "@/components/ServiceCard.vue";
 import bioImg from "@/assets/images/icon-eco.svg";
 import handsCare from "@/assets/images/icon-hands-care.svg";
 import ButtonCta from "@/components/ButtonCta.vue";
+import CardLink from "@/components/CardLink.vue";
 
 </script>
 
@@ -47,6 +48,17 @@ import ButtonCta from "@/components/ButtonCta.vue";
       </div>
       <ButtonCta :path="'/'" class="mt">Je m'abonne !</ButtonCta>
     </section>
+    <section class="section-quick-shop mb-130">
+      <CardLink :title="'la box du mois'" :text="'34.95€'">
+        <img :src="nisaaBox" alt="box nisaa box">
+      </CardLink>
+      <CardLink :bg-card-header="'bg-clr-maroon'">
+        <h2 class="card-link__header__title abril-fatface-font">découvres <br> les box <br> précédentes</h2>
+      </CardLink>
+    </section>
+    <section class="section-comments">
+      <h2 class="h2 abril-fatface-font mb-60">Vos retours</h2>
+    </section>
 
   </main>
 </template>
@@ -70,17 +82,6 @@ import ButtonCta from "@/components/ButtonCta.vue";
   margin: auto;
 }
 
-/* 
-.text-underline:before {
-  position: relative;
-  display: block;
-  content: "";
-  height: 3px;
-  width: 45px;
-  bottom: 0;
-  background-color: var(--clr-maroon);
-} */
-
 .grid-services {
   display: flex;
   flex-direction: column;
@@ -91,6 +92,21 @@ import ButtonCta from "@/components/ButtonCta.vue";
 
 .section-services .button {
   margin: auto;
+}
+
+.section-quick-shop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 10px;
+}
+
+.card-link__header__title {
+  text-align: center;
+  color: var(--clr-green);
+  text-transform: uppercase;
+  font-size: clamp(19px, 3vw, 39px);
+  padding: 10px;
 }
 
 @media screen and (min-width: 568px) {
