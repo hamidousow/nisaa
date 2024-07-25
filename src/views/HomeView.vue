@@ -11,6 +11,7 @@ import bioImg from "@/assets/images/icon-eco.svg";
 import handsCare from "@/assets/images/icon-hands-care.svg";
 import ButtonCta from "@/components/ButtonCta.vue";
 import CardLink from "@/components/CardLink.vue";
+import CommentComponent from "@/components/CommentComponent.vue";
 
 </script>
 
@@ -58,6 +59,7 @@ import CardLink from "@/components/CardLink.vue";
     </section>
     <section class="section-comments">
       <h2 class="h2 abril-fatface-font mb-60">Vos retours</h2>
+      <CommentComponent />
     </section>
 
   </main>
