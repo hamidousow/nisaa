@@ -107,6 +107,7 @@ const menuActive = ref("nav-menu active");
     color: var(--clr-green);
     text-decoration: none;
     font-size: 31px;
+    font-weight: 500;
 }
 
 .utils-wrapper {
