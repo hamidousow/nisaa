@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import heroImage from "@/assets/images/femme-background-detouree.png"
+import heroImage from "@/assets/images/femme-background-detouree.webp"
 import Button from "@/components/ButtonCta.vue";
 </script>
 
