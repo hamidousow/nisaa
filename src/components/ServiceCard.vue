@@ -4,8 +4,9 @@ const props = defineProps(["imgSrc", "imgAlt", "text"])
 
 <template>
     <div class="service-card">
-
-        <img :src="props.imgSrc" :alt="props.imgAlt">
+        <div class="container-img">
+            <img :src="props.imgSrc" :alt="props.imgAlt">
+        </div>
 
         <div class="card-body">
             <p>{{ props.text }}</p>
@@ -15,25 +16,34 @@ const props = defineProps(["imgSrc", "imgAlt", "text"])
 
 <style scoped>
 .service-card {
-    display: grid;
-    grid-template-rows: 50px auto;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     row-gap: 7px;
-    /* border: 1px solid var(--clr-green); */
-    border-radius: 3px;
+    max-width: 300px;
+    height: 250px;
 }
 
-.service-card img {
+.service-card .container-img {
+    height: 50px;
+}
+
+.service-card .container-img img {
+    display: block;
     width: 80%;
     height: 80%;
     margin: auto;
     max-width: 100px;
 }
 
-@media screen {
+@media screen and (min-width: 768px) {
     .service-card {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        row-gap: 7px;
         max-width: 300px;
-        height: auto;
+        height: 230px;
     }
 }
 </style>

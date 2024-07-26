@@ -39,13 +39,13 @@ import CommentComponent from "@/components/CommentComponent.vue";
           class="text-underline"> 5 essentiels
         </span>soigneusement
         sélectionnés qui te permettront de méditer et prendre soin de toi.</h2>
-      <div class="grid-services mb-30">
+      <div class="grid-services card-group mb-30">
         <ServiceCard :img-src="bioImg" :img-alt="'icon bio'"
           :text="'Nous sélectionnons des produits de beauté qui te veulent du bien: naturels, bios, éthiques.'" />
         <ServiceCard :img-src="handsCare" :img-alt="'icon bio'"
           :text="'Retrouve dans chaque box l\'article Niya [نية] faisant écho à la thématique religieuse.'" />
         <ServiceCard :img-src="bioImg" :img-alt="'icon bio'"
-          :text="'Nous sélectionnons des produits de beauté qui te veulent du bien: naturels, bios, éthiques.'" />
+          :text="'Découvre des défis inspirants et de la documentation enrichissante pour prendre soin de toi tout en approfondissant tes connaissances.'" />
       </div>
       <ButtonCta :path="'/'" class="mt">Je m'abonne !</ButtonCta>
     </section>
@@ -111,7 +111,7 @@ import CommentComponent from "@/components/CommentComponent.vue";
   padding: 10px;
 }
 
-@media screen and (min-width: 568px) {
+@media screen and (min-width: 768px) {
 
   .grid-services {
     flex-direction: row;
