@@ -41,6 +41,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
 .container {
   margin: auto;
   padding: 20px 25px;

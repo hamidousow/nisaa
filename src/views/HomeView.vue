@@ -57,7 +57,7 @@ import CommentComponent from "@/components/CommentComponent.vue";
         <h2 class="card-link__header__title abril-fatface-font">découvres <br> les box <br> précédentes</h2>
       </CardLink>
     </section>
-    <section class="section-comments">
+    <section class="section-comments mb-130">
       <h2 class="h2 abril-fatface-font mb-60">Vos retours</h2>
       <CommentComponent />
     </section>

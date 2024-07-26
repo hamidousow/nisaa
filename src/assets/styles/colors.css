@@ -4,7 +4,6 @@
   --clr-white: #ffffff;
 }
 
-
 .clr-white {
   color: var(--clr-white);
 }
@@ -17,4 +16,7 @@
 }
 .bg-clr-maroon {
   background-color: var(--clr-maroon);
+}
+.bg-clr-green {
+  background-color: var(--clr-green);
 }
