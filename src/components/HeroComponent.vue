@@ -46,6 +46,7 @@ import Button from "@/components/ButtonCta.vue";
 
 .header-title {
     font-size: clamp(27px, 2vw, 50px);
+    font-weight: 500;
 }
 
 .header-text {

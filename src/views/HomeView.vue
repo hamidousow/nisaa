@@ -54,7 +54,7 @@ import CommentComponent from "@/components/CommentComponent.vue";
         <img :src="nisaaBox" alt="box nisaa box">
       </CardLink>
       <CardLink :bg-card-header="'bg-clr-maroon'">
-        <h2 class="card-link__header__title abril-fatface-font">découvres <br> les box <br> précédentes</h2>
+        <h2 class="h2 card-link__header__title abril-fatface-font">découvres <br> les box <br> précédentes</h2>
       </CardLink>
     </section>
     <section class="section-comments mb-130">
@@ -68,6 +68,7 @@ import CommentComponent from "@/components/CommentComponent.vue";
 <style scoped>
 .h2 {
   font-size: clamp(21px, 2vw, 29px);
+  font-weight: 500;
   text-align: center;
   max-width: 900px;
   margin-left: auto;
