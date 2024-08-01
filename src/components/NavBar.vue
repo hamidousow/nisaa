@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
-import IconSearch from '@/components/icons/IconSearch.vue';
 import IconCart from '@/components/icons/IconCart.vue';
-import IconButton from '@/components/icons/IconButton.vue';
 import nissaLogo from '@/assets/images/nisaa-logo.svg';
+import IconFacebook from './icons/IconFacebook.vue';
+import IconInstagram from './icons/IconInstagram.vue';
 
 const isMenuOpen = ref(false);
 
 
-const menuActive = ref("nav-menu active");
+const menuActive = ref("container-menu active");
 
 const btnContent = ref("menu")
 
@@ -17,38 +17,60 @@ const btnContent = ref("menu")
 
 <template>
     <nav class="nav">
-        <div class="nav-content container">
+        <div class="nav-content">
             <RouterLink to="/" @click="isMenuOpen = false">
                 <img :src="nissaLogo" alt="nisaa logo" class="nav-brand">
             </RouterLink>
-            <ul :class="[isMenuOpen ? menuActive : 'nav-menu']">
-                <li class="menu-link">
-                    <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font"> panier (0)
-                    </RouterLink>
-                </li>
-                <li class="menu-link">
-                    <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font"> l'histoire de nisaa
-                    </RouterLink>
-                </li>
-                <li class="menu-link">
-                    <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font">la box du mois
-                    </RouterLink>
-                </li>
-                <li class="menu-link">
-                    <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font">contact</RouterLink>
-                </li>
-            </ul>
+
             <div class="utils-wrapper">
                 <div class="menu-utils">
-                    <!-- <IconSearch /> -->
                     <IconCart />
                 </div>
-                <span class="btn-toggle-menu" @click="isMenuOpen = !isMenuOpen">
-                    <span class="toggle-menu abril-fatface-font"
-                        v-if="isMenuOpen ? btnContent = 'close' : btnContent = 'menu'"
-                        :class="[isMenuOpen ? 'clr-maroon' : 'clr-green']">
-                        {{ btnContent }}</span>
-                </span>
+                <span class="btn-toggle-menu toggle-menu abril-fatface-font" @click="isMenuOpen = !isMenuOpen"
+                    v-if="isMenuOpen ? btnContent = 'close' : btnContent = 'menu'"
+                    :class="[isMenuOpen ? 'clr-maroon' : 'clr-green']">
+                    {{ btnContent }}</span>
+            </div>
+        </div>
+        <div :class="[isMenuOpen ? menuActive : 'container-menu']">
+
+            <div class="menu">
+
+                <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font menu__link"> panier (0)
+                </RouterLink>
+                <ul class="menu__list">
+
+                    <li>
+                        <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font menu__link"> l'histoire
+                            de nisaa
+                        </RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font menu__link">la box du
+                            mois
+                        </RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font menu__link">contact
+                        </RouterLink>
+                    </li>
+                </ul>
+                <div class="menu-footer">
+                    <div class="container_social-links">
+                        <ul class="social-links__list">
+                            <li>
+                                <RouterLink to="/">
+                                    <IconFacebook />
+                                </RouterLink>
+                            </li>
+                            <li>
+                                <RouterLink to="/">
+                                    <IconInstagram />
+                                </RouterLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -56,7 +78,7 @@ const btnContent = ref("menu")
 
 
 
-<style>
+<style scoped>
 .nav {
     display: flex;
     flex-direction: row;
@@ -66,6 +88,7 @@ const btnContent = ref("menu")
     right: 0;
     top: 0;
     z-index: 99;
+    justify-content: space-around;
 }
 
 .nav-content {
@@ -85,37 +108,46 @@ const btnContent = ref("menu")
     z-index: 10;
 }
 
-.nav-menu {
+.container-menu {
     display: none;
-    height: 100vh;
-    flex-direction: column;
-    position: absolute;
-    align-items: flex-end;
-    top: 0;
-    right: 0;
-    left: 0;
-    padding: 25px;
-    background-color: var(--clr-green);
-    row-gap: 15px;
-
 }
 
-.nav-menu.active {
+.container-menu.active {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    inset: 0;
+    padding-top: 120px;
+    background-color: var(--clr-green);
     z-index: -10;
 }
 
-.menu-link {
-    list-style: none;
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    row-gap: 125px;
 }
 
-.menu-link a {
+.menu__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.menu__link,
+.menu__list li {
+    list-style: none;
+    text-align: right;
     color: var(--clr-maroon);
     text-decoration: none;
-    font-size: 31px;
+    font-size: 27px;
     font-weight: 500;
-    text-transform: uppercase
+    text-transform: uppercase;
+
 }
 
 .utils-wrapper {
@@ -134,31 +166,27 @@ const btnContent = ref("menu")
     font-size: 25px;
 }
 
+.social-links__list {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
 
+.btn-toggle-menu {
+    text-transform: uppercase;
+}
 
 @media screen and (min-width: 768px) {
 
-    .nav-menu {
-        display: flex;
-        position: initial;
-        flex-direction: row;
-        width: auto;
-        height: auto;
-        column-gap: 20px;
-        flex: 1;
-        padding: 0 15px;
-        background-color: transparent;
-        justify-content: center;
+    .menu {
+        max-width: 1480px;
+        margin: 0 auto;
+        height: 100%;
+        padding: 20px;
     }
 
-    .menu-link a {
-        color: var(--clr-green);
-        text-decoration: none;
-        font-size: 21px;
-    }
-
-    .btn-toggle-menu {
-        display: none;
+    .menu__list .menu__link {
+        font-size: 70px !important;
     }
 }
 </style>
