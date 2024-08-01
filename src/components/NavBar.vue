@@ -147,7 +147,6 @@ const btnContent = ref("menu")
     font-size: 27px;
     font-weight: 500;
     text-transform: uppercase;
-
 }
 
 .utils-wrapper {
@@ -174,6 +173,10 @@ const btnContent = ref("menu")
 
 .btn-toggle-menu {
     text-transform: uppercase;
+}
+
+.btn-toggle-menu {
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
