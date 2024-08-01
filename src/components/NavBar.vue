@@ -11,22 +11,23 @@ const isMenuOpen = ref(false);
 
 const menuActive = ref("nav-menu active");
 
+const btnContent = ref("menu")
 
 </script>
 
 <template>
-    <nav class="nav bg-clr-maroon">
+    <nav class="nav">
         <div class="nav-content container">
             <RouterLink to="/" @click="isMenuOpen = false">
                 <img :src="nissaLogo" alt="nisaa logo" class="nav-brand">
             </RouterLink>
             <ul :class="[isMenuOpen ? menuActive : 'nav-menu']">
                 <li class="menu-link">
-                    <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font"> l'histoire de nisaa
+                    <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font"> panier (0)
                     </RouterLink>
                 </li>
                 <li class="menu-link">
-                    <RouterLink to="/about" @click="isMenuOpen = false" class="abril-fatface-font">les sagesses
+                    <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font"> l'histoire de nisaa
                     </RouterLink>
                 </li>
                 <li class="menu-link">
@@ -43,7 +44,10 @@ const menuActive = ref("nav-menu active");
                     <IconCart />
                 </div>
                 <span class="btn-toggle-menu" @click="isMenuOpen = !isMenuOpen">
-                    <IconButton />
+                    <span class="toggle-menu abril-fatface-font"
+                        v-if="isMenuOpen ? btnContent = 'close' : btnContent = 'menu'"
+                        :class="[isMenuOpen ? 'clr-maroon' : 'clr-green']">
+                        {{ btnContent }}</span>
                 </span>
             </div>
         </div>
@@ -76,27 +80,30 @@ const menuActive = ref("nav-menu active");
 
 .nav-brand {
     width: 60px;
-    fill: var(--clr-green);
-    color: var(--clr-green);
+    fill: var(--clr-maroon);
+    color: var(--clr-maroon);
+    z-index: 10;
 }
 
 .nav-menu {
     display: none;
-    height: 90vh;
+    height: 100vh;
     flex-direction: column;
     position: absolute;
     align-items: flex-end;
-    top: 65px;
+    top: 0;
     right: 0;
     left: 0;
     padding: 25px;
-    background-color: var(--clr-maroon);
+    background-color: var(--clr-green);
     row-gap: 15px;
+
 }
 
 .nav-menu.active {
     display: flex;
     justify-content: center;
+    z-index: -10;
 }
 
 .menu-link {
@@ -104,10 +111,11 @@ const menuActive = ref("nav-menu active");
 }
 
 .menu-link a {
-    color: var(--clr-green);
+    color: var(--clr-maroon);
     text-decoration: none;
     font-size: 31px;
     font-weight: 500;
+    text-transform: uppercase
 }
 
 .utils-wrapper {
@@ -120,6 +128,10 @@ const menuActive = ref("nav-menu active");
     display: flex;
     flex-direction: row;
     column-gap: 15px;
+}
+
+.toggle-menu {
+    font-size: 25px;
 }
 
 
