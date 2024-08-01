@@ -39,7 +39,7 @@ const menuActive = ref("nav-menu active");
             </ul>
             <div class="utils-wrapper">
                 <div class="menu-utils">
-                    <IconSearch />
+                    <!-- <IconSearch /> -->
                     <IconCart />
                 </div>
                 <span class="btn-toggle-menu" @click="isMenuOpen = !isMenuOpen">

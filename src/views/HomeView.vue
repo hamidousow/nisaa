@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import HeroComponent from "@/components/HeroComponent.vue";
-import womanOne from "@/assets/images/woman-1.jpg";
+import womanOne from "@/assets/images/woman-1.webp";
 import masjid from "@/assets/images/masjid.jpg";
 import WrapImageText from '@/components/WrapImageText.vue';
 import nisaaBox from "@/assets/images/nisaa-box.jpg";

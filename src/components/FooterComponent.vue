@@ -19,9 +19,6 @@ import IconInstagram from './icons/IconInstagram.vue';
                     <h3 class="clr-maroon mb-10">Liens rapides</h3>
                     <ul class="footer__menu">
                         <li class="footer__link">
-                            <RouterLink to="/"> recherche </RouterLink>
-                        </li>
-                        <li class="footer__link">
                             <RouterLink to="/"> S'abonner </RouterLink>
                         </li>
                         <li class="footer__link">
