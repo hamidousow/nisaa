@@ -119,6 +119,7 @@ const btnContent = ref("menu")
     height: 100vh;
     width: 100%;
     inset: 0;
+		padding: 25px;
     padding-top: 120px;
     background-color: var(--clr-green);
     z-index: -10;
