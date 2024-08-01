@@ -115,6 +115,7 @@ const btnContent = ref("menu")
 .container-menu.active {
     display: flex;
     flex-direction: column;
+		justify-content: space-between;
     position: absolute;
     height: 100vh;
     width: 100%;
