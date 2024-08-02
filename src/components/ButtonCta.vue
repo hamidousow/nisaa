@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const path = defineProps(['path'])
 </script>
 
@@ -18,5 +17,6 @@ const path = defineProps(['path'])
     color: var(--clr-white);
     /* margin: 15px 0; */
     text-decoration: none;
+    text-wrap: nowrap;
 }
 </style>

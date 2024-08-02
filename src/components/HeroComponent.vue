@@ -5,22 +5,25 @@ import gsap from "gsap";
 import { onMounted } from "vue";
 
 onMounted(() => {
-
-    gsap.from(".hero__image", { x: 100, opacity: 0, duration: 1 })
-    gsap.from(".fade", { y: 100, opacity: 0, duration: 1, delay: .5 })
-    gsap.from(".expand-effect", { opacity: 0, translateX: "0", duration: 1, delay: .9 })
+    gsap.from(".fade-down", { y: -100, opacity: 0, duration: .7 })
+    gsap.from(".hero__image", { x: 100, opacity: 0, duration: 1, delay: .7 })
+    gsap.from(".fade-up", { y: 100, opacity: 0, duration: 1, delay: 1 })
+    gsap.from(".expand-effect", { opacity: 0, width: "0", delay: 1, duration: 1 })
 })
 </script>
 
 <template>
-    <div id="hero" class="bg-clr-maroon">
+    <div id="hero" class="bg-clr-maroon fade-down">
         <div class="hero-content container">
             <div class="hero-left">
-                <h1 class="hero-title abril-fatface-font fade">Le soin du corps et de l'esprit</h1>
-                <p class="hero-text futura-regular-font fade">Découvre la première box beauté et lifestyle inspirée des
+                <h1 class="hero-title abril-fatface-font fade-up">Le soin du corps et de l'esprit</h1>
+                <p class="hero-text futura-regular-font fade-up">Découvre la première box beauté et lifestyle inspirée
+                    des
                     principes et
                     valeurs de l'islam.</p>
-                <Button path="/" class="btn expand-effect">Découvrez nos produits</Button>
+                <Button path="/" class="btn fade-up">
+                    <span> Découvrez nos produits </span>
+                </Button>
             </div>
             <div class="hero-container-image">
                 <img :src="heroImage" alt="femme" class="hero__image">
