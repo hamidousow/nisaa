@@ -33,8 +33,8 @@ function toggleMenu() {
 </script>
 
 <template>
-    <nav class="nav">
-        <div class="nav-content">
+    <header class="header">
+        <nav class="nav-content">
             <RouterLink to="/" @click="isMenuOpen = false">
                 <img :src="nissaLogo" alt="nisaa logo" class="nav-brand">
             </RouterLink>
@@ -48,7 +48,7 @@ function toggleMenu() {
                     :class="[isMenuOpen ? 'clr-maroon' : 'clr-green']">
                     {{ btnContent }}</span>
             </div>
-        </div>
+        </nav>
         <div class="container-menu__style" :class="[isMenuOpen ? menuActive : 'container-menu']">
 
             <div class="menu">
@@ -90,13 +90,13 @@ function toggleMenu() {
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 </template>
 
 
 
 <style scoped>
-.nav {
+.header {
     display: flex;
     flex-direction: row;
     align-content: center;

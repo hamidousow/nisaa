@@ -4,7 +4,7 @@ import Button from "@/components/ButtonCta.vue";
 </script>
 
 <template>
-    <div class="bg-clr-maroon">
+    <div id="hero" class="bg-clr-maroon">
         <div class="hero-content container">
             <div class="hero-left">
                 <h1 class="hero-title abril-fatface-font">Le soin du corps et de l'esprit</h1>
