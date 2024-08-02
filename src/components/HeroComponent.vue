@@ -1,20 +1,29 @@
 <script lang="ts" setup>
 import heroImage from "@/assets/images/femme-background-detouree.webp"
 import Button from "@/components/ButtonCta.vue";
+import gsap from "gsap";
+import { onMounted } from "vue";
+
+onMounted(() => {
+
+    gsap.from(".hero__image", { x: 100, opacity: 0, duration: 1 })
+    gsap.from(".fade", { y: 100, opacity: 0, duration: 1, delay: .5 })
+    gsap.from(".expand-effect", { opacity: 0, translateX: "0", duration: 1, delay: .9 })
+})
 </script>
 
 <template>
     <div id="hero" class="bg-clr-maroon">
         <div class="hero-content container">
             <div class="hero-left">
-                <h1 class="hero-title abril-fatface-font">Le soin du corps et de l'esprit</h1>
-                <p class="hero-text futura-regular-font">Découvre la première box beauté et lifestyle inspirée des
+                <h1 class="hero-title abril-fatface-font fade">Le soin du corps et de l'esprit</h1>
+                <p class="hero-text futura-regular-font fade">Découvre la première box beauté et lifestyle inspirée des
                     principes et
                     valeurs de l'islam.</p>
-                <Button path="/">Découvrez nos produits</Button>
+                <Button path="/" class="btn expand-effect">Découvrez nos produits</Button>
             </div>
             <div class="hero-container-image">
-                <img :src="heroImage" alt="femme">
+                <img :src="heroImage" alt="femme" class="hero__image">
             </div>
         </div>
 
