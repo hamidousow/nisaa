@@ -170,7 +170,7 @@ function toggleMenu() {
     font-size: 27px;
     font-weight: 500;
     text-transform: uppercase;
-    transition: transform .7s ease;
+    transition: transform .7s ease-in-out, color .5s ease-in-out;
 }
 
 .menu__link:hover,
