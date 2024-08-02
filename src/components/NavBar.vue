@@ -20,11 +20,13 @@ const btnContent = ref("menu");
 function toggleMenu() {
     if (isMenuOpen.value == false) {
         isMenuOpen.value = true
-        gsap.to(".container-menu", { height: "100vh", duration: .5, })
+        gsap.to(".container-menu", { height: "100vh", duration: .5, display: "flex" })
+        gsap.to(".menu", { opacity: 1, delay: .3, duration: .3 })
 
     } else {
         isMenuOpen.value = false
-        gsap.to(".container-menu", { height: "0vh", duration: .5 })
+        gsap.to(".menu", { opacity: 0, duration: .1 })
+        gsap.to(".container-menu", { height: 0, delay: .2, duration: .2, display: "none" })
     }
 }
 
@@ -124,6 +126,7 @@ function toggleMenu() {
 }
 
 .container-menu {
+    height: 0;
     display: none;
 }
 
@@ -133,11 +136,11 @@ function toggleMenu() {
 
 .container-menu__style {
     flex-direction: column;
-		justify-content: space-between;
+    justify-content: space-between;
     position: absolute;
     width: 100%;
     inset: 0;
-		padding: 25px;
+    padding: 25px;
     padding-top: 120px;
     background-color: var(--clr-green);
     z-index: -10;
@@ -149,6 +152,7 @@ function toggleMenu() {
     justify-content: space-between;
     width: 100%;
     row-gap: 125px;
+    opacity: 0;
 }
 
 .menu__list {
