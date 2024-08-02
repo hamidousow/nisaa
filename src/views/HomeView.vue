@@ -17,7 +17,7 @@ import CommentComponent from "@/components/CommentComponent.vue";
 
 <template>
   <HeroComponent />
-  <main class="main container">
+  <div class="container">
     <div id="section-box-arguments" class=" mb-130">
 
       <WrapImageText :img-src="womanOne" :img-alt="'woman'" :title="'La box mensuelle qui te veut du bien'"
@@ -61,8 +61,7 @@ import CommentComponent from "@/components/CommentComponent.vue";
       <h2 class="h2 abril-fatface-font mb-60">Vos retours</h2>
       <CommentComponent />
     </section>
-
-  </main>
+  </div>
 </template>
 
 <style scoped>
