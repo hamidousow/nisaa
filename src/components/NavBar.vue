@@ -21,7 +21,7 @@ function toggleMenu() {
     if (isMenuOpen.value == false) {
         isMenuOpen.value = true
         gsap.to(".container-menu", { height: "100vh", duration: .5, display: "flex" })
-        gsap.to(".menu", { opacity: 1, delay: .3, duration: .3 })
+        gsap.to(".menu", { opacity: 1, delay: .2, duration: .2 })
 
     } else {
         isMenuOpen.value = false
@@ -35,7 +35,7 @@ function toggleMenu() {
 <template>
     <nav class="nav">
         <div class="nav-content">
-            <RouterLink to="/" @click="isMenuOpen = false">
+            <RouterLink to="/" @click="toggleMenu">
                 <img :src="nissaLogo" alt="nisaa logo" class="nav-brand">
             </RouterLink>
 
@@ -53,22 +53,22 @@ function toggleMenu() {
 
             <div class="menu">
 
-                <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font menu__link"> panier (0)
+                <RouterLink to="/" @click="toggleMenu" class="abril-fatface-font menu__link"> panier (0)
                 </RouterLink>
                 <ul class="menu__list">
 
                     <li>
-                        <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font menu__link"> l'histoire
+                        <RouterLink to="/" @click="toggleMenu" class="abril-fatface-font menu__link"> l'histoire
                             de nisaa
                         </RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font menu__link">la box du
+                        <RouterLink to="/" @click="toggleMenu" class="abril-fatface-font menu__link">la box du
                             mois
                         </RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/" @click="isMenuOpen = false" class="abril-fatface-font menu__link">contact
+                        <RouterLink to="/" @click="toggleMenu" class="abril-fatface-font menu__link">contact
                         </RouterLink>
                     </li>
                 </ul>
@@ -170,6 +170,14 @@ function toggleMenu() {
     font-size: 27px;
     font-weight: 500;
     text-transform: uppercase;
+    transition: transform .7s ease;
+}
+
+.menu__link:hover,
+.menu__list li:hover {
+    transform: translateX(-30px);
+    color: var(--clr-white);
+
 }
 
 .utils-wrapper {
