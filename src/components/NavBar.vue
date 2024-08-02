@@ -5,13 +5,28 @@ import IconCart from '@/components/icons/IconCart.vue';
 import nissaLogo from '@/assets/images/nisaa-logo.svg';
 import IconFacebook from './icons/IconFacebook.vue';
 import IconInstagram from './icons/IconInstagram.vue';
+import { gsap } from "gsap";
 
 const isMenuOpen = ref(false);
 
 
 const menuActive = ref("container-menu active");
 
-const btnContent = ref("menu")
+const btnContent = ref("menu");
+
+
+
+
+function toggleMenu() {
+    if (isMenuOpen.value == false) {
+        isMenuOpen.value = true
+        gsap.to(".container-menu", { height: "100vh", duration: .5, })
+
+    } else {
+        isMenuOpen.value = false
+        gsap.to(".container-menu", { height: "0vh", duration: .5 })
+    }
+}
 
 </script>
 
@@ -26,13 +41,13 @@ const btnContent = ref("menu")
                 <div class="menu-utils">
                     <IconCart />
                 </div>
-                <span class="btn-toggle-menu toggle-menu abril-fatface-font" @click="isMenuOpen = !isMenuOpen"
+                <span class="btn-toggle-menu toggle-menu abril-fatface-font" @click="toggleMenu"
                     v-if="isMenuOpen ? btnContent = 'close' : btnContent = 'menu'"
                     :class="[isMenuOpen ? 'clr-maroon' : 'clr-green']">
                     {{ btnContent }}</span>
             </div>
         </div>
-        <div :class="[isMenuOpen ? menuActive : 'container-menu']">
+        <div class="container-menu__style" :class="[isMenuOpen ? menuActive : 'container-menu']">
 
             <div class="menu">
 
@@ -114,9 +129,11 @@ const btnContent = ref("menu")
 
 .container-menu.active {
     display: flex;
+}
+
+.container-menu__style {
     flex-direction: column;
     position: absolute;
-    height: 100vh;
     width: 100%;
     inset: 0;
     padding-top: 120px;

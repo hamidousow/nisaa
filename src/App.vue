@@ -12,6 +12,8 @@ import FooterComponent from './components/FooterComponent.vue';
   </div>
 </template>
 
-<style scoped>
-@media (min-width: 1024px) {}
+<style>
+.main {
+  min-height: 100vh;
+}
 </style>
