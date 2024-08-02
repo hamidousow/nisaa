@@ -35,7 +35,7 @@ function toggleMenu() {
 <template>
     <nav class="nav">
         <div class="nav-content">
-            <RouterLink to="/" @click="isMenuOpen = !isMenuOpen">
+            <RouterLink to="/" @click="isMenuOpen = false">
                 <img :src="nissaLogo" alt="nisaa logo" class="nav-brand">
             </RouterLink>
 
