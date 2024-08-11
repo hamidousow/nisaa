@@ -12,13 +12,27 @@ import handsCare from "@/assets/images/icon-hands-care.svg";
 import ButtonCta from "@/components/ButtonCta.vue";
 import CardLink from "@/components/CardLink.vue";
 import CommentComponent from "@/components/CommentComponent.vue";
+import gsap from "gsap";
+import { onMounted } from "vue";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+
+  gsap.to(".section-box-arguments", {
+    scrollTrigger: ".section-box-arguments",
+    y: -60,
+    duration: 3
+  })
+})
 
 </script>
 
 <template>
   <HeroComponent />
   <div class="container">
-    <div id="section-box-arguments" class=" mb-130">
+    <div id="section-box-arguments" class=" mb-130 section-box-arguments">
 
       <WrapImageText :img-src="womanOne" :img-alt="'woman'" :title="'La box mensuelle qui te veut du bien'"
         :text="'Produits de soin, cosmétiques, accessoires, lectures, bien-être, et d\'autres surprises t\'attendent !'" />
@@ -123,9 +137,9 @@ import CommentComponent from "@/components/CommentComponent.vue";
 
 @media screen and (min-width: 768px) {
 
-  #section-box-arguments {
+  /* #section-box-arguments {
     position: relative;
     top: -65px;
-  }
+  } */
 }
 </style>
