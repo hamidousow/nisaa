@@ -21,8 +21,8 @@ onMounted(() => {
                     des
                     principes et
                     valeurs de l'islam.</p>
-                <Button path="/" class="btn fade-up">
-                    <span> Découvrez nos produits </span>
+                <Button path="/box-of-the-month" class="btn fade-up">
+                    <span> Découvres la box du mois </span>
                 </Button>
             </div>
             <div class="hero-container-image">

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const HomeView = () => import("@/views/HomeView.vue")
+const BoxOfTheMonthView = () => import("@/views/BoxOfTheMonth.vue")
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +18,11 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: "/box-of-the-month",
+      name: "boxOfTheMonth",
+      component: BoxOfTheMonthView
     }
   ]
 })
