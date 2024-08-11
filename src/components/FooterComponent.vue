@@ -84,16 +84,23 @@ input[type="submit"] {
     border-width: 2px;
     border-color: transparent;
     font-size: 13px;
+    color: var(--clr-green);
     text-transform: uppercase;
+    border-radius: 0 3px 3px 0;
+
 }
 
 input[type="email"] {
     padding: 0 10px;
+    border-color: transparent;
+    border-radius: 3px 0 0 3px;
 }
 
 input[type="email"]:focus-visible {
     transition: .5s;
-    outline: var(--clr-maroon) auto 1px;
+    outline: transparent auto 1px;
+    /* border: 1px solid var(--clr-maroon); */
+    border-radius: 3px 0 0 3px;
 }
 
 .footer__menu {
