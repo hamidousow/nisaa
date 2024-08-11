@@ -1,13 +1,19 @@
 @font-face {
   font-family: 'Abril Fatface';
-  src: url('../fonts/AbrilFatface-Regular.ttf');
-  src: url('../fonts/AbrilFatface-Regular.ttf') format('ttf');
+  font-style: normal;
+  font-display: auto;
+  src:
+    local('Abril Fatface'),
+    url('/public/fonts/AbrilFatface-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Futura Book';
-  src: url('../fonts/Futura-Book.ttf');
-  src: url('../fonts/Futura-Book.ttf') format('ttf');
+  font-style: normal;
+  font-display: auto;
+  src:
+    local('Futura Book'),
+    url('/public/fonts/Futura-Book.woff') format('woff');
 }
 
 .abril-fatface-font {
