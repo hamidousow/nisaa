@@ -4,7 +4,7 @@
   font-display: auto;
   src:
     local('Abril Fatface'),
-    url('/public/fonts/AbrilFatface-Regular.woff') format('woff');
+    url('/fonts/AbrilFatface-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-display: auto;
   src:
     local('Futura Book'),
-    url('/public/fonts/Futura-Book.woff') format('woff');
+    url('/fonts/Futura-Book.woff') format('woff');
 }
 
 .abril-fatface-font {
