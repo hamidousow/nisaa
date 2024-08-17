@@ -63,7 +63,7 @@ function toggleMenu() {
                         </RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/box-of-the-month" @click="toggleMenu" class="abril-fatface-font menu__link">la
+                        <RouterLink to="/" @click="toggleMenu" class="abril-fatface-font menu__link">la
                             box du
                             mois
                         </RouterLink>

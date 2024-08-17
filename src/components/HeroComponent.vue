@@ -21,7 +21,7 @@ onMounted(() => {
                     des
                     principes et
                     valeurs de l'islam.</p>
-                <Button path="/box-of-the-month" class="btn fade-up">
+                <Button path="/" class="btn fade-up">
                     <span> Découvres la box du mois </span>
                 </Button>
             </div>
